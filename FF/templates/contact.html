@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends Fashion</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{% static './Asserts/2.png' %}" type="image/x-icon">
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- bootstrap icons cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- AOS animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- external css -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-sm bg-body-tertiary">
+        <div class="container">
+            <!-- navbarbrand -->
+            <img src="{% static './ASSERTS/1.png' %}" class="img-fluid" alt="" style="width: 50px;height: 50px; border-radius: 50%;">
+          <a class="navbar-brand text-info fw-bold fs-2 ps-2" href="#"> Friend's<span style="color: black;"> Fashion</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- nav links -->
+            <ul class="navbar-nav mx-auto text-center mb-2 mb-lg-0 fs-5 fw-bold">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'shop' %}">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'brand' %}">Brands</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+              </li>
+            </ul>
+              <ul class="navbar-nav ms-auto text-center justify-content-center mb-2 mb-lg-0 ">
+              <!-- login & cart -->
+                <li class="nav-item">
+                    <a class="nav-link fs-5" href="{% url 'signup' %}"><i class="bi bi-person"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-5" href="{% url 'logout_view' %}"><i class="bi bi-person-slash"></i></a>
+              </li>
+                <li class="nav-item fs-5">
+                    
+                  <a class="nav-link fs-5" href="{% url 'cart' %}">
+                    <!-- cart-icon -->
+                    <i class="bi bi-bag-heart" id="cart-icon"><span id="icon-value">0</span></i>
+                  </a>
+                  
+                
+              </li>
+              </ul>
+          </div>
+        </div>
+    </nav>
+    <!-- navbar end -->
+
+    <!-- Banner section start -->
+      <img src="{% static './ASSERTS/contactbanner.png' %}" alt="" class="d-block w-100" height="350px">
+    <!-- Banner section end -->
+
+    <!-- Contact us start -->
+    <section class="contactus container my-3">
+        <h1 class="text-center fw-bold">Contact For Any Queries</h1>
+        <div class="row container m-4">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                <form class="m-3" method="POST">
+                  {% csrf_token %}
+                    <!-- <label for="inputname" class="form-label">Fullname</label> -->
+                    <input type="text" class="form-control" id="inputname" name="uname" placeholder="Your name"><br>
+                    <input type="email" class="form-control" id="inputemail" name="umail" placeholder="Your Email"><br>
+                    <input type="text" class="form-control" id="inputname" name="umobile" placeholder="Your Mobile.num"><br>
+                    <input type="text" class="form-control" id="inputsubject" name="subject" placeholder="Subject"><br>
+                    <textarea name="msgs" placeholder="Enter your message"></textarea>
+                    <button type="submit" class="btn btn-light mt-3">Send Message</button>
+                </form>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                <h3 class="text-start fs-3">Get In Touch</h3>
+                <p class="text-start fs-5">Justo sed diam ut sed amet duo amet lorem amet stet sea ipsum, sed duo amet et. Est elitr dolor elitr erat sit sit. Dolor diam et erat clita ipsum justo sed.</p>
+                <h3 class="text-start fs-3">Store 1</h3>
+                <p><i class="bi bi-geo-alt-fill"></i> &nbsp; Kavali, Nellore</p>
+                <p><i class="bi bi-envelope-fill"></i> &nbsp; ff2003@gmail.com</p>
+                <p><i class="bi bi-telephone-fill"></i> &nbsp; +91 7093868067</p>
+                <h3 class="text-start fs-3">Store 2</h3>
+                <p><i class="bi bi-geo-alt-fill"></i> &nbsp;  Badvel,Kadapa</p>
+                <p><i class="bi bi-envelope-fill"></i> &nbsp; frendsfashion@gmail.com</p>
+                <p><i class="bi bi-telephone-fill"></i> &nbsp; 91+ 6305341832</p>
+            </div>
+        </div> 
+     </section>
+
+
+      <!-- FQA section start -->
+      <section class="fqa_sec container my-3">
+        <!-- fqa-header -section start -->
+         <h3 class="text-center text-success display-5 mb-4">Frequently <span style="color: orangered;">Asked</span> Questions</h3>
+         <!-- fqa-header-section end -->
+          <!-- fqa content-section start -->
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    Choosing a Platform
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  <p>When it comes to choosing an ecommerce platform, there are many options available. Some of the most popular platforms include Shopify, WooCommerce, and Magento. Each platform has its own strengths and weaknesses, so it’s important to do your research and choose the one that best fits your needs.
+                    Consider factors such as ease of use, customization options, pricing, and customer support when making your decision. You may also want to think about the size of your business and your long-term goals when selecting a platform.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                    Setting Up an Online Store
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <p>FOnce you’ve chosen a platform, the next step is to set up your online store. This typically involves selecting a theme or design for your site, adding products, and configuring your settings.
+                    Make sure to optimize your site for search engines and provide clear product descriptions and images to help customers make informed purchasing decisions. You may also want to consider offering promotions or discounts to attract customers and increase sales.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    Payment Gateways
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <p>Payment gateways are an essential part of any ecommerce store. These services allow you to securely process payments from customers and transfer funds to your bank account.
+                    Popular payment gateways include PayPal, Stripe, and Authorize.net. When selecting a payment gateway, make sure to consider factors such as fees, security, and ease of use.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    Adding Products
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p>Adding products to your ecommerce store is a straightforward process. Most ecommerce platforms allow you to create product listings that include details such as product name, description, price, and images. You can also add additional information such as product dimensions, weight, and shipping options.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    Inventory Tracking
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p>Managing your inventory is an essential part of product management. You need to know how much stock you have on hand at all times so that you can avoid overselling and stockouts.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    Product Variants
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p>If you sell products with different variations, such as size or color, you’ll need to set up product variants. Most ecommerce platforms allow you to create product variants that are linked to the main product listing.</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+           <!-- fqa content-section-end -->
+       </section>
+       <!-- FAQ section end -->
+
+
+         <!-- footer section start -->
+    <div class="footer-section container-fluid p-4 mt-3 bg-dark text-light">
+     <!-- row start -->
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3 text-center">
+                <h3 class="text-info">Friend's<span class="text-light"> Fashion</span></h3>
+                <p><i class="bi bi-clock"></i> Open hours of Gov<br>Mon-Sat:10AM-9PM</p>
+                <p><i class="bi bi-geo-alt"></i>Kavali, Nellore</p>
+                <p><i class="bi bi-telephone"></i> +91 7093868067</p>
+                <p><i class="bi bi-envelope-at"></i> ff2003@gmail.com</p>
+            </div>
+     <!-- 2nd column -->
+         <div class="col-12 col-sm-12 col-md-3 col-lg-3 text-center">
+             <h3>Services</h3>
+             <p>Quality Fabric</p>
+             <p>More Offers</p>
+             <p>On-time Delivery</p>
+             <p>Door Delivery</p>
+         </div>
+         <div class="col-12 col-sm-12 col-md-3 col-lg-3 text-center">
+             <h3>Links</h3>
+             <p>Terms&C0nditions</p>
+             <p>Privacy Policy</p>
+             <p>Contact Us</p>
+         </div>
+         <div class="col-12 col-sm-12 col-md-3 col-lg-3 text-center">
+             <h3>Contact Us</h3>
+             <p class="text-center">
+             <i class="bi bi-instagram fs-2" style="color: palevioletred;"></i>
+             <i class="bi bi-facebook fs-2" style="color: blue;"></i>
+             <i class="bi bi-twitter fs-2" style="color: skyblue;"></i>
+             <i class="bi bi-snapchat fs-2" style="color: yellow;"></i>
+             </p>
+         </div>
+      </div>
+     <!-- row end -->
+
+     <!-- 2nd row -->
+      <div class="row border-top p-3">
+          <p class="fs-5 text-center">&copy; Copyright 2024 by <span class="text-info">Friend's</span> Fashion</p>
+      </div>
+   </div>
+  <!-- footer section end -->      
+    <!--bootstrap cdb script js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- AOS ANIMATION CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- external js -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'script.js' %}"></script>    
+    <script src="{% static 'shop.js' %}"></script>   
+</body>
+</html>

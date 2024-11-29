@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Friends Fashion</title>
+   <!-- favicon -->
+   <link rel="shortcut icon" href="{% static './Asserts/2.png' %}" type="image/x-icon">
+   <!-- bootstrap cdn -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   <!-- bootstrap icons cdn -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <!-- AOS animation -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <!-- external css -->
+   <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+<body>
+    
+    <h1>Cart</h1>
+    <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb" class="position-absolute top-20 start-50 translate-middle">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Cart</li>
+        </ol>
+    </nav>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success {{message.tags}}" role="alert">
+            {{message}}
+        </div>
+    {% endfor %}
+    {% endif %}
+    <button onclick="removeall()" class="m-3">Remove All</button>
+    <a href="{% url 'address' %}" type="button" class="border border-2 border-black bg-secondary-subtle px-2 text-decoration-none text-dark">Add Address</a>
+    <div class="container row mt-5 text-start">
+        <div class="col-6 ms-5">
+            <h3>Shipping Address</h3>
+            {% if address %}
+                <p>{{ address.name }}</p>
+                <p>{{ address.email }}</p>
+                <p>{{ address.phone }}</p>
+                <p>{{ address.street }}</p>
+                <p>{{ address.city }}</p>
+                <p>{{ address.state }}</p>
+                <p>{{ address.pin }}</p>
+                <p>{{ address.country }}</p>
+                <p>{{ address.shipping }}</p>
+            {% else %}
+                <p>No address added yet.</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="container">
+        <div class="row cart-items">
+            <!-- dynamically added cart items -->
+        </div>
+        <!-- <div class="row mt-5">
+            <div class="col-6 offset-6">
+                <h3>Shipping Address</h3>
+                {% if address %}
+                    <p>{{ address.name }}</p>
+                    <p>{{ address.email }}</p>
+                    <p>{{ address.phone }}</p>
+                    <p>{{ address.street }}</p>
+                    <p>{{ address.city }}</p>
+                    <p>{{ address.state }}</p>
+                    <p>{{ address.pin }}</p>
+                    <p>{{ address.country }}</p>
+                    <p>{{ address.shipping }}</p>
+                {% else %}
+                    <p>No address added yet.</p>
+                {% endif %}
+            </div>
+        </div> -->
+
+        <!-- Right-side panel to display address -->
+    </div>
+    <!-- <div class="row mt-5">
+        <div class="col-6 offset-6">
+            <h3>Shipping Address</h3>
+            {% if address %}
+                <p>{{ address.name }}</p>
+                <p>{{ address.email }}</p>
+                <p>{{ address.phone }}</p>
+                <p>{{ address.street }}</p>
+                <p>{{ address.city }}</p>
+                <p>{{ address.state }}</p>
+                <p>{{ address.pin }}</p>
+                <p>{{ address.country }}</p>
+                <p>{{ address.shipping }}</p>
+            {% else %}
+                <p>No address added yet.</p>
+            {% endif %}
+        </div>
+    </div> -->
+
+    <div class="total-price m-5">
+        <h3 id="cart-total"></h3>
+        <button class="rounded px-2">Payment</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="{% static 'cart.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends Fashion</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{% static './Asserts/2.png' %}" type="image/x-icon">
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- bootstrap icons cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- AOS animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- external css -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-sm bg-body-tertiary">
+        <div class="container">
+            <!-- navbarbrand -->
+            <img src="{% static './ASSERTS/1.png' %}" class="img-fluid" alt="" style="width: 50px;height: 50px; border-radius: 50%;">
+          <a class="navbar-brand text-info fw-bold fs-2 ps-2" href="#"> Friend's<span style="color: black;"> Fashion</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- nav links -->
+            <ul class="navbar-nav mx-auto text-center mb-2 mb-lg-0 fs-5 fw-bold">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'shop' %}">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'brand' %}">Brands</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+              </li>
+            </ul>
+              <ul class="navbar-nav ms-auto text-center justify-content-center mb-2 mb-lg-0 ">
+              <!-- login & cart -->
+                <li class="nav-item">
+                    <a class="nav-link fs-5" href="{% url 'signup' %}"><i class="bi bi-person"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-5" href="{% url 'logout_view' %}"><i class="bi bi-person-slash"></i></a>
+              </li>
+                <li class="nav-item fs-5">
+                    
+                  <a class="nav-link fs-5" href="{% url 'cart' %}">
+                    <!-- cart-icon -->
+                    <i class="bi bi-bag-heart" id="cart-icon"><span id="icon-value">0</span></i>
+                  </a>
+                  
+                
+              </li>
+              </ul>
+          </div>
+        </div>
+    </nav>
+    <!-- navbar end -->
+  
+    <!-- brands banner start -->
+      <img src="{% static './ASSERTS/Brandsbanner.png' %}" class="img-fluid" alt="" style="width: 100%; height: 350px;">
+    <!-- brands banner end -->
+
+
+    <!-- brands section start -->
+    <section class="container-fluid py-5 bg-dark">
+      <h3 class="text-center fw-bold fst-italic text-info">Brands</h3>
+      <p class="h text-center text-light display-5 fw-bold">We offer</p>
+      <div class="container">
+      <div class="row my-5 gy-4">
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card border-0 text-center" style="border-radius: 50%;">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/adidaslogo.png' %}" class="card-img-top w-100" style="height: 200px; border-radius: 50%;">
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card border-0 text-center" style="border-radius: 50%;">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/fabindialogo.jpg' %}" class="card-img-top w-100" style="height: 200px;border-radius: 50%;">
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card border-0 text-center" style="border-radius: 50%;">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/cklogo.png' %}" class="card-img-top w-100" style="height: 200px;border-radius: 50%;">
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card border-0 text-center" style="border-radius: 50%;">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/levislogo.png' %}" class="card-img-top w-100" style="height: 200px;border-radius: 50%;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row my-5 gy-4">
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card border-0 text-center" style="border-radius: 50%;">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/maxlogo.jpeg' %}" class="card-img-top w-100" style="height: 200px;border-radius: 50%;">
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card border-0 text-center" style="border-radius: 50%;">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/muftilogo.png' %}" class="card-img-top w-100" style="height: 200px;border-radius: 50%;">
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card border-0 text-center" style="border-radius: 50%;">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/nikelogo.png' %}" class="card-img-top w-100" style="height: 200px;border-radius: 50%;">
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card border-0 text-center" style="border-radius: 50%;">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/pumalogo.png' %}" class="card-img-top w-100" style="height: 200px;border-radius: 50%;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row my-5 gy-4">
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card border-0 text-center" style="border-radius: 50%;">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/ramrajlogo.png' %}" class="card-img-top w-100" style="height: 200px;border-radius: 50%;">
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card border-0 text-center" style="border-radius: 50%;">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/raymondlogo.png' %}" class="card-img-top w-100" style="height: 200px;border-radius: 50%;">
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card border-0 text-center" style="border-radius: 50%;">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/wranglerlogo.png' %}" class="card-img-top w-100" style="height: 200px;border-radius: 50%;">
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card border-0 text-center" style="border-radius: 50%;">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/zaralogo.png' %}" class="card-img-top w-100" style="height: 200px;border-radius: 50%;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     </section>
+    <!-- brands section end -->
+
+
+    <div class="container my-5">
+      <h2 class="text-info">Product Description</h2>
+      <p>Welcome to Friend's Fashion, here we bring you the best in fashion with uncompromising quality. 
+        Our online shopping app is designed to provide a seamless and enjoyable shopping experience, offering 
+        a curated selection of high-quality products to meet all your fashion needs.
+        We use only the highest quality materials to ensure our products are not only beautiful but also long-lasting.
+        Each product undergoes thorough testing to meet and exceed industry standards, guaranteeing top performance.
+      </p>
+
+    </div>
+
+    <!-- section start -->
+    <section class="container my-5">
+      <div class="row gy-4 mb-4">
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/Fabindia.jpg' %}" class="card-img-top" style="height: 350px;">
+            </div>
+            <div class="card-body">
+              <h4>Fabindia</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/ramrajdhoti.jpeg' %}" class="card-img-top" style="height: 350px;">
+            </div>
+            <div class="card-body">
+              <h4>Ramraj Dhoti</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/CalvinKlein.jpg' %}" class="card-img-top" style="height: 350px;">
+            </div>
+            <div class="card-body">
+              <h4>Calvin Klein</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/Nike.png' %}" class="card-img-top" style="height: 350px;">
+            </div>
+            <div class="card-body">
+              <h4>Nike</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row gy-4 mb-4">
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/Raymond.jpg' %}" class="card-img-top" style="height: 350px;">
+            </div>
+            <div class="card-body">
+              <h4>Raymond</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/puma.jpg' %}" class="card-img-top" style="height: 350px;">
+            </div>
+            <div class="card-body">
+              <h4>Puma</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/MaxFashion.jpg' %}" class="card-img-top" style="height: 350px;">
+            </div>
+            <div class="card-body">
+              <h4>Max Fashion</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/Mufti.jpg' %}" class="card-img-top" style="height: 350px;">
+            </div>
+            <div class="card-body">
+              <h4>Mufti</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row gy-4 mb-4">
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/ramrajsaree.jpg' %}" class="card-img-top" style="height: 350px;">
+            </div>
+            <div class="card-body">
+              <h4>Ramraj Saree</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/Lilliput.jpg' %}" class="card-img-top" style="height: 350px;">
+            </div>
+            <div class="card-body">
+              <h4>Lilliput</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/zara.jpg' %}" class="card-img-top" style="height: 350px;">
+            </div>
+            <div class="card-body">
+              <h4>Zara</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <div class="card">
+            <div class="chinnu">
+              <img src="{% static './ASSERTS/Adidas.jpg' %}" class="card-img-top" style="height: 350px;">
+            </div>
+            <div class="card-body">
+              <h4>Adidas</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section end -->
+      <!-- subscribe section start -->
+      <section class="subscription container">
+        <div class="bg-dark py-3 rounded-pill text-center" data-aos="zoom-in" data-aos-duration="1000">
+          <h3 class="h text-center text-info">Stay Updated</h3>
+          <p class="text-center mt-3 text-light">Our online shopping app is designed to provide a seamless and enjoyable shopping experience.</p>
+          <div class="input-group mb-3 w-50 mx-auto">
+            <input type="text" class="form-control border border-info" placeholder="Enter Your E-mail">
+            <button class="btn btn-outline-info fw-bold" type="button" id="button-addon2">Subscribe</button>
+          </div>
+        </div>
+      </section>
+      <!-- subscribe section end -->
+    <!-- footer section start -->
+    <div class="footer-section container-fluid p-4 mt-3 bg-dark text-light">
+        <!-- row start -->
+         <div class="row">
+          <div class="col-12 col-sm-12 col-md-3 col-lg-3 text-center">
+            <h3 class="text-info">Friend's<span class="text-light"> Fashion</span></h3>
+            <p><i class="bi bi-clock"></i> Open hours of Gov<br>Mon-Sat:10AM-9PM</p>
+            <p><i class="bi bi-geo-alt"></i>Kavali, Nellore</p>
+            <p><i class="bi bi-telephone"></i> +91 7093868067</p>
+            <p><i class="bi bi-envelope-at"></i> ff2003@gmail.com</p>
+          </div>
+          <!-- 2nd column -->
+           <div class="col-12 col-sm-12 col-md-3 col-lg-3 text-center">
+            <h3>Services</h3>
+            <p>Quality Fabric</p>
+            <p>More Offers</p>
+            <p>On-time Delivery</p>
+            <p>Door Delivery</p>
+           </div>
+           <div class="col-12 col-sm-12 col-md-3 col-lg-3 text-center">
+            <h3>Links</h3>
+            <p>Terms&C0nditions</p>
+            <p>Privacy Policy</p>
+            <p>Contact Us</p>
+           </div>
+           <div class="col-12 col-sm-12 col-md-3 col-lg-3 text-center">
+            <h3>Contact Us</h3>
+            <p class="text-center">
+              <i class="bi bi-instagram fs-2" style="color: palevioletred;"></i>
+              <i class="bi bi-facebook fs-2" style="color: blue;"></i>
+              <i class="bi bi-twitter fs-2" style="color: skyblue;"></i>
+              <i class="bi bi-snapchat fs-2" style="color: yellow;"></i>
+            </p>
+           </div>
+         </div>
+         <!-- row end -->
+        <!-- 2nd row -->
+         <div class="row border-top p-3">
+          <p class="fs-5 text-center">&copy; Copyright 2024 by <span class="text-info">Friend's</span> Fashion</p>
+         </div>
+    </div>
+    <!-- footer section end -->
+     <!--bootstrap cdb script js -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+     <!-- AOS ANIMATION CDN -->
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script>
+       AOS.init();
+     </script>
+     <!-- external js -->
+     <script src="{% static 'script.js' %}"></script>
+     <script src="{% static 'shop.js' %}"></script>
+</body>
+</html>

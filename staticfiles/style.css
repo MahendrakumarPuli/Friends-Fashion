@@ -1,0 +1,87 @@
+.card1:hover{
+    transform: scale(1.15);
+}
+.chinnu:hover{
+    transform: scale(1.15);
+}
+.h{
+    position: relative;
+    margin: auto;
+    text-align: center;
+    font-size: 40px; 
+    max-width: 600px;
+}
+.h::before{
+    content: "";
+    width: 120px;
+    height: 2px;
+    background: skyblue;
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+.h::after{
+    content: "";
+    width: 120px;
+    height: 2px;
+    background: skyblue;
+    position: absolute;
+    right: 0;
+    top: 60%;
+}
+@media screen and (max-width:576px) {
+    .h{
+        position: relative;
+        margin: auto;
+        text-align: center;
+        font-size: 40px; 
+        max-width: 600px;
+    }
+    .h::before{
+        content: "";
+        width: 0px;
+        height: 0px;
+        background: skyblue;
+        position: absolute;
+        left: 0;
+        top: 50%;
+    }
+    .h::after{
+        content: "";
+        width: 0px;
+        height: 0px;
+        background: skyblue;
+        position: absolute;
+        right: 0;
+        top: 60%;
+    }
+
+}
+@media screen and (min-width:576px) and (max-width:768px){
+    .h{
+        position: relative;
+        margin: auto;
+        text-align: center;
+        font-size: 40px; 
+        max-width: 600px;
+    }
+    .h::before{
+        content: "";
+        width: 60px;
+        height: 2px;
+        background: skyblue;
+        position: absolute;
+        left: 0;
+        top: 50%;
+    }
+    .h::after{
+        content: "";
+        width: 60px;
+        height: 2px;
+        background: skyblue;
+        position: absolute;
+        right: 0;
+        top: 60%;
+    }
+
+}
